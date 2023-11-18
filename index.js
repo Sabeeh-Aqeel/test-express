@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
 
-  fs.readFile('html\\index.html', 'utf-8', (err, html) => {
+  fs.readFile('html/index.html', 'utf-8', (err, html) => {
 
     if (err) {
       console.log(err)
