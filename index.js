@@ -4,19 +4,15 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000 
 
+let visits = fs.readFileSync('number.txt', "utf-8")
+
+
+console.log(visits)
 
 app.get('/', (req, res) => {
-
-  fs.readFile('html/index.html', 'utf-8', (err, html) => {
-
-    if (err) {
-      console.log(err)
-      res.status(500).send("server error test")
-    }
-
-    res.send(html)
-
-  })
+  visits++
+  fs.writeFileSync('number.txt', visits)
+  res.send("This website has been visited "+visits+" many times")
 })
 
 app.listen(port, () => {
