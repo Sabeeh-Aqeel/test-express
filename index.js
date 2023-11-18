@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
     if (err) {
       console.log(err)
-      res.status(500).send("server error")
+      res.status(500).send("server error test")
     }
 
     res.send(html)
