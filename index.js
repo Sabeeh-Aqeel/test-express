@@ -11,7 +11,7 @@ console.log(visits)
 
 app.get('/', (req, res) => {
   visits++
-  fs.writeFileSync('number.txt', toString(visits))
+  // fs.writeFileSync('number.txt', toString(visits))
   res.send("This website has been visited "+process.env.counter+" many times")
 })
 
